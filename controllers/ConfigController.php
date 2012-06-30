@@ -44,7 +44,7 @@ class SolrSearch_ConfigController extends Omeka_Controller_Action
 							//update the database with new values
 							$db = get_db();
 							$db->insert('solr_search_facets', $data); 
-							$this->flashSuccess('Solr facets updated.');
+							$this->flashSuccess(__('Solr facets updated.'));
 						} catch (Exception $err) {
 							$this->flashError($err->getMessage());
         				}
@@ -52,7 +52,7 @@ class SolrSearch_ConfigController extends Omeka_Controller_Action
 				}
     		}
 	    	else {
-	    			$this->flashError('Failed to gather posted data.');
+	    			$this->flashError(__('Failed to gather posted data.'));
 	    			$this->view->form = $form;
 	    	}
     	}	
@@ -76,18 +76,18 @@ class SolrSearch_ConfigController extends Omeka_Controller_Action
 	    	   		$elementSetName = $db->getTable('ElementSet')->find($field['element_set_id'])->name;
 		    		$mC = new Zend_Form_Element_MultiCheckbox('options_' . $field['id']);
 		    		$mC->setLabel($elementSetName . ': ' . $field['name']);
-		    		$mC->setMultiOptions(array(	'is_displayed'=>'Is Displayed',
-		    									'is_facet'=>'Is Facet', 
-	                                			'is_sortable'=>'Is Sortable'));
+		    		$mC->setMultiOptions(array(	'is_displayed'=>__('Is Displayed'),
+		    									'is_facet'=>__('Is Facet'), 
+	                                			'is_sortable'=>__('Is Sortable')));
     			} else {
 	    			$mC = new Zend_Form_Element_MultiCheckbox('options_' . $field['id']);
 		    		$mC->setLabel(ucwords($field['name']));
 		    		if ($field['name'] == 'image'){
-		    			$mC->setMultiOptions(array(	'is_displayed'=>'Is Displayed'));
+		    			$mC->setMultiOptions(array(	'is_displayed'=>__('Is Displayed')));
 		    		} else{
-    		    		$mC->setMultiOptions(array(	'is_displayed'=>'Is Displayed',
-    							'is_facet'=>'Is Facet', 
-                                'is_sortable'=>'Is Sortable'));
+    		    		$mC->setMultiOptions(array(	'is_displayed'=>__('Is Displayed'),
+    							'is_facet'=>__('Is Facet'), 
+                                'is_sortable'=>__('Is Sortable')));
 		    		}
 
     			}
@@ -112,7 +112,7 @@ class SolrSearch_ConfigController extends Omeka_Controller_Action
 			//Submit button
 	    	$form->addElement('submit','submit');
 	    	$submitElement=$form->getElement('submit');
-	    	$submitElement->setLabel('Submit');
+	    	$submitElement->setLabel(__('Submit'));
 	    	$submitElement->setDecorators(array('ViewHelper',
 				array(array('data' => 'HtmlTag'), array('tag' => 'td', 'class' => 'element', 'colspan' => 2)),
 				 array(array('row' => 'HtmlTag'), array('tag' => 'tr')),));	

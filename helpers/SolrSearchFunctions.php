@@ -42,7 +42,8 @@ function solr_search_base_url()
  * @param type $formProperties
  * @return string
  */
-function solr_search_form($buttonText = "Search", $formProperties=array('id'=>'simple-search'))
+$buttonText = __('Search');
+function solr_search_form($buttonText, $formProperties=array('id'=>'simple-search'))
 {
     $uri = solr_search_base_url();
     $formProperties['action'] = $uri;
@@ -247,14 +248,14 @@ function solr_search_remove_facets()
         || (isset($queryParams['q']) && $queryParams['q'] == '*:*'
             && !isset($queryParams['facet']))
     ) {
-        $html .= '<li><b>ALL TERMS</b></li>';
+        $html .= __('<li><b>ALL TERMS</b></li>');
 
     } else {
         // Otherwise, continue with process of displaying facets and removal
         // links.
 
         if (isset($queryParams['q'])) {
-            $html .= "<li><b>Keyword:</b> {$queryParams['q']} "
+            $html .= __('<li><b>Keyword:</b>') . "{$queryParams['q']} "
                 . "[<a href='$uri?solrfacet={$queryParams['facet']}'>X</a>]"
                 . "</li>";
         }
@@ -357,7 +358,7 @@ function solr_search_sort_form() {
     $form->addElement($facet);
 
     $sortField = new Zend_Form_Element_Select('sort');
-    $sortField->setLabel('Sorted By:');
+    $sortField->setLabel(__('Sorted By:'));
 
     //get sortable fields
     $db = get_db();
@@ -380,16 +381,16 @@ function solr_search_sort_form() {
             foreach ($elements as $element) {
                 if ($element['name'] == $sortable['name']){
                     $fields[$element->id . '_s asc'] = $element->name
-                        . ', Ascending';
+                        . __(', Ascending');
                     $fields[$element->id . '_s desc'] = $element->name
-                        . ', Descending';
+                        . __(', Descending');
                 }
             }
         } else {
             $fields[$sortable->name . ' asc'] = ucwords($sortable->name)
-                . ', Ascending';
+                . __(', Ascending');
             $fields[$sortable->name . ' desc'] = ucwords($sortable->name)
-                . ', Descending';
+                . __(', Descending');
         }
     }
 
@@ -408,7 +409,7 @@ function solr_search_sort_form() {
     //Submit button
     $form->addElement('submit','submit');
     $submitElement=$form->getElement('submit');
-    $submitElement->setLabel('Go');
+    $submitElement->setLabel(__('Go'));
     $submitElement->setDecorators(array(
         'ViewHelper', array(
             array('data' => 'HtmlTag'),

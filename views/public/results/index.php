@@ -1,6 +1,6 @@
 <?php header('Content-Type: text/html; charset=utf-8'); ?>
 
-<?php head(array('title' => 'Browse', 'bodyclass' => 'page')); ?>
+<?php head(array('title' => __('Browse'), 'bodyclass' => 'page')); ?>
 <div id="primary">
 	<div class="<?php if (!empty($facets)){ echo 'solr_results'; } ?>">
 		<h1>Browse</h1>
@@ -10,9 +10,9 @@
 			if ($results)
 			{
 			?>
-				<div class="solr_remove_facets"><h2>Current Query</h2><ul><?php echo solr_search_remove_facets(); ?></ul></div>
+				<div class="solr_remove_facets"><h2><?php echo __('Current Query'); ?></h2><ul><?php echo solr_search_remove_facets(); ?></ul></div>
 				<div class="solr_sort">
-					<h4>Total Results: <?php echo $results->response->numFound; ?></h4>
+					<h4><?php echo __('Total Results: '); ?><?php echo $results->response->numFound; ?></h4>
 					<div class="solr_sort_form"><?php echo solr_search_sort_form(); ?></div>
 				</div>
 				<div class="pagination"><?php echo pagination_links(); ?></div>
@@ -85,7 +85,7 @@
 	<?php if (!empty($facets)){ ?>
         <?php $query = solr_search_get_params(); ?>
 		<div class="solr_facets">
-			<h2>Facets</h2>
+			<h2><?php echo __('Facets'); ?></h2>
 			<?php foreach ($results->facet_counts->facet_fields as $facet => $values){ ?>
 					<h3><?php if (strstr($facet, '_')) { ?>
 							<?php echo solr_search_element_lookup($facet); ?>		

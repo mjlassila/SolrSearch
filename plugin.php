@@ -74,6 +74,7 @@ add_plugin_hook('admin_theme_header', 'solr_search_admin_header');
 add_plugin_hook('public_theme_header', 'solr_search_public_header');
 add_plugin_hook('config_form', 'solr_search_option_form');
 add_plugin_hook('config', 'solr_search_config');
+add_plugin_hook('initialize', 'solr_search_initialize');
 //}}}
 
 // {{{ filters
@@ -431,6 +432,11 @@ function solr_search_config()
 	}
   
 }
+// Prepare plugin for initialization
+function solr_search_initialize()
+{
+    add_translation_source(dirname(__FILE__) . '/languages');
+}
 
 /*********
  * Displayable element form
@@ -448,41 +454,41 @@ function solr_search_options(){
     $form = new Zend_Form();
     
     $solrServer = new Zend_Form_Element_Text ('solr_search_server');
-    $solrServer->setLabel('Server:');
+    $solrServer->setLabel(__('Server:'));
     $solrServer->setValue(get_option('solr_search_server'));
     $solrServer->setRequired('true');
     $form->addElement($solrServer);
     
 	$solrPort = new Zend_Form_Element_Text ('solr_search_port');
-    $solrPort->setLabel('Port:');
+    $solrPort->setLabel(__('Port:'));
     $solrPort->setValue(get_option('solr_search_port'));
     $solrPort->setRequired('true');
     $solrPort->addValidator(new Zend_Validate_Digits());
     $form->addElement($solrPort);
 
 	$solrCore = new Zend_Form_Element_Text ('solr_search_core');
-    $solrCore->setLabel('Core:');
+    $solrCore->setLabel(__('Core:'));
     $solrCore->setValue(get_option('solr_search_core'));
     $solrCore->setRequired('true');    
     $solrCore->addValidator('regex', true, array('/\/.*\//i'));
     $form->addElement($solrCore);
     
     $solrRows = new Zend_Form_Element_Text ('solr_search_rows');
-    $solrRows->setLabel('Results Per Page:');
+    $solrRows->setLabel(__('Results Per Page:'));
     $solrRows->setValue(get_option('solr_search_rows'));
     $solrRows->setRequired('true');
     $solrRows->addValidator(new Zend_Validate_Digits());
     $form->addElement($solrRows);
     
     $solrFacetSort = new Zend_Form_Element_Select ('solr_search_facet_sort');
-    $solrFacetSort->setLabel('Facet Sort Order:');
+    $solrFacetSort->setLabel(__('Facet Sort Order:'));
     $solrFacetSort->addMultiOption('index', 'Alphabetical');
 	$solrFacetSort->addMultiOption('count', 'Occurrences');    
     $solrFacetSort->setValue(get_option('solr_search_facet_sort'));
     $form->addElement($solrFacetSort);
     
     $solrFacetLimit = new Zend_Form_Element_Text ('solr_search_facet_limit');
-    $solrFacetLimit->setLabel('Maximum Facet Constraint Count:');
+    $solrFacetLimit->setLabel(__('Maximum Facet Constraint Count:'));
     $solrFacetLimit->setValue(get_option('solr_search_facet_limit'));
     $solrFacetLimit->setRequired('true');
     $solrFacetLimit->addValidator(new Zend_Validate_Digits());

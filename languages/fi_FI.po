@@ -1,0 +1,251 @@
+# Translation for the SolrSearch plugin for Omeka.
+# This file is distributed under the same license as the Omeka package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: SolrSearch\n"
+"POT-Creation-Date: 2012-06-27 21:49-0500\n"
+"PO-Revision-Date: 2012-06-27 10:21+0000\n"
+"Last-Translator: Matti Lassila <matti.lassila@gmail.com>\n"
+"Language-Team: Finnish (Finland) (http://www.transifex.net/projects/p/omeka/language/fi_FI/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fi_FI\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: config_form.php:35
+msgid "Solr Options"
+msgstr "Solr-asetukset"
+
+#: config_form.php:41
+msgid "Server Host:"
+msgstr "Palvelin:"
+
+#: config_form.php:48
+msgid "Server Port:"
+msgstr "Portti:"
+
+#: config_form.php:60
+msgid "Solr Core Name:"
+msgstr "Solr-hakemisto:"
+
+#: config_form.php:72
+msgid "Results Per Page"
+msgstr "Tuloksia sivua kohden"
+
+#: config_form.php:75
+msgid "Results count must be numeric"
+msgstr "Lukumäärän tulee olla luku"
+
+#: config_form.php:80
+msgid "Default Sort Order:"
+msgstr "Oletusjärjestys"
+
+#: config_form.php:81
+msgid "Alphabetical"
+msgstr "Aakkosellinen"
+
+#: config_form.php:82
+msgid "Occurrences"
+msgstr "Osumat"
+
+#: config_form.php:89
+msgid "Maximum Facet Count:"
+msgstr "Fasettien maksimi"
+
+#: controllers/ConfigController.php:47
+msgid "Solr facets updated."
+msgstr "Solr-fasetit on päivitetty."
+
+#: controllers/ConfigController.php:55 controllers/HighlightController.php:24
+msgid "Failed to gather posted data."
+msgstr "Tietojen kerääminen epäonnistui."
+
+#: controllers/ConfigController.php:79 controllers/ConfigController.php:86
+#: controllers/ConfigController.php:88
+msgid "Is Displayed"
+msgstr "Näytetään"
+
+#: controllers/ConfigController.php:80 controllers/ConfigController.php:89
+msgid "Is Facet"
+msgstr "Fasetti"
+
+#: controllers/ConfigController.php:81 controllers/ConfigController.php:90
+msgid "Is Sortable"
+msgstr "Lajiteltava"
+
+#: controllers/ConfigController.php:115 controllers/HighlightController.php:64
+msgid "Submit"
+msgstr "Lähetä"
+
+#: controllers/HighlightController.php:21
+msgid "Hit highlighting features modified."
+msgstr "Hakusanojen korostuksen"
+
+#: controllers/HighlightController.php:40
+msgid "True"
+msgstr "Kyllä"
+
+#: controllers/HighlightController.php:41
+msgid "False"
+msgstr "Ei"
+
+#: controllers/HighlightController.php:47
+msgid "Snippets:"
+msgstr "Katkelmat:"
+
+#: controllers/HighlightController.php:55
+msgid "Fragment Size:"
+msgstr "Katkelman koko"
+
+#: controllers/ReindexController.php:18
+msgid "Reindex process started."
+msgstr "Uudelleenindeksointi on aloitettu."
+
+#: controllers/ReindexController.php:36
+msgid "Reindex"
+msgstr "Uudelleenindeksoi"
+
+#: helpers/SolrSearchFunctions.php:45
+msgid "Search"
+msgstr "Hae"
+
+#: helpers/SolrSearchFunctions.php:250
+msgid "<li><b>ALL TERMS</b></li>"
+msgstr "<li><b>Kaikki hakutermit</b></li>"
+
+#: helpers/SolrSearchFunctions.php:360
+msgid "Sorted By:"
+msgstr "Järjestysehto:"
+
+#: helpers/SolrSearchFunctions.php:383 helpers/SolrSearchFunctions.php:390
+msgid ", Ascending"
+msgstr ", nouseva"
+
+#: helpers/SolrSearchFunctions.php:392
+msgid ", Descending"
+msgstr ", laskeva"
+
+#: helpers/SolrSearchFunctions.php:411
+msgid "Go"
+msgstr "Hae"
+
+#: helpers/SolrSearchFunctions.php:259
+msgid "</li>"
+msgstr "</li>"
+
+#: plugin.php:457
+msgid "Server:"
+msgstr "Palvelin:"
+
+#: plugin.php:463
+msgid "Port:"
+msgstr "Portti:"
+
+#: plugin.php:470
+msgid "Core:"
+msgstr "Ydin:"
+
+#: plugin.php:477
+msgid "Results Per Page:"
+msgstr "Tuloksia sivulla:"
+
+#: plugin.php:484
+msgid "Facet Sort Order:"
+msgstr "Fasettien järjestys"
+
+#: plugin.php:491
+msgid "Maximum Facet Constraint Count:"
+msgstr "Fasetttien maksimimäärä:"
+
+#: views/admin/config/index.php:2
+msgid "Solr Search Configuration"
+msgstr "Solr-haun asetukset"
+
+#: views/admin/config/index.php:4
+msgid "Configure SolrSearch Indexing"
+msgstr "Solr-haun indeksointiasetukset"
+
+#: views/admin/config/index.php:8 views/admin/highlight/index.php:8
+#: views/admin/reindex/index.php:8
+msgid "Field Configuration"
+msgstr "Hakukenttien konfigurointi"
+
+#: views/admin/config/index.php:11 views/admin/highlight/index.php:11
+#: views/admin/reindex/index.php:11
+msgid "Hit Highlighting Options"
+msgstr "Hakusanojen korostuksen asetukset"
+
+#: views/admin/config/index.php:14 views/admin/highlight/index.php:14
+#: views/admin/reindex/index.php:14
+msgid "Index Items"
+msgstr "Indeksoi"
+
+#: views/admin/config/index.php:18
+msgid "Select Facet Fields"
+msgstr "Valitse fasettien kentät"
+
+#: views/admin/config/index.php:25
+msgid "Select facets from available fields below."
+msgstr "Valitse fasetit kenttien joukosta."
+
+#: views/admin/config/update.php:2 views/admin/reindex/update.php:2
+msgid "Solr Search Facets"
+msgstr "Solr-hakufasetit"
+
+#: views/admin/config/update.php:4 views/admin/reindex/update.php:4
+msgid "Manage Solr Search Facets"
+msgstr "Hallinnoi Solr-hakufasetteja"
+
+#: views/admin/config/update.php:13 views/admin/highlight/update.php:13
+#: views/admin/reindex/update.php:13
+msgid "Return to form."
+msgstr "Palaa lomakkeelle."
+
+#: views/admin/highlight/index.php:2 views/admin/highlight/update.php:2
+msgid "Solr Search Hit Highlighting Options"
+msgstr "Solr-hakutulosten hakusanojen korostuksen asetukset"
+
+#: views/admin/highlight/index.php:4 views/admin/reindex/index.php:4
+msgid "Configure Solr"
+msgstr "Solr-asetukset"
+
+#: views/admin/highlight/index.php:18 views/admin/highlight/update.php:4
+msgid "Hit Highlighting"
+msgstr "Hakusanojen korostus"
+
+#: views/admin/highlight/index.php:25
+msgid "Select hit highlighting options from available fields below."
+msgstr "Valitse hakusanojen korostusasetukset"
+
+#: views/admin/reindex/index.php:2
+msgid "Reindex Items in Solr"
+msgstr "Indeksoi uudelleen kaikki Solr"
+
+#: views/admin/reindex/index.php:18
+msgid "Reindex All Items"
+msgstr "Indeksoi uudelleen kaikki tietueet"
+
+#: views/admin/reindex/index.php:25
+msgid ""
+"Click the button below to repost all of Omeka's public items into the Solr "
+"index."
+msgstr "Alla oleva painike uudelleenindeksoi kaikki Omekan julkiset teokset Solriin."
+
+#: views/public/results/index.php:3
+msgid "Browse"
+msgstr "Selaa"
+
+#: views/public/results/index.php:13
+msgid "Current Query"
+msgstr "Nykyinen haku"
+
+#: views/public/results/index.php:15
+msgid "Total Results: "
+msgstr "Tuloksia yhteensä: "
+
+#: views/public/results/index.php:88
+msgid "Facets"
+msgstr "Fasetit"

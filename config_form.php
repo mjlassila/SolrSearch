@@ -32,20 +32,20 @@
 </style>
 
 <div class="field">
-    <h3>Solr Options</h3>
+    <h3><?php echo __("Solr Options"); ?></h3>
     
     <?php 
         // Fix this...        
         echo new Zend_Form_Element_Text('solr_search_server', array(
             'required' => true,
-            'label' => 'Server Host:',
+            'label' =>  __('Server Host:'),
             'value' => get_option('solr_search_server')
         ));
         
         echo new Zend_Form_Element_Text('solr_search_port', array(
             'required' => true,
             'validators' => array('alnum'),
-            'label' => 'Server Port:',
+            'label' => __('Server Port:'),
             'value' => get_option('solr_search_port')
         ));
         
@@ -57,36 +57,36 @@
                 '/\/.*\//i'
                 )
             ),
-            'label' => 'Solr Core Name:',
+            'label' => __('Solr Core Name:'),
             'value' => get_option('solr_search_core')
         ));
         
         // echo new Zend_Form_Element_Text('solr_search_rows', array(
         //           'required' => true,
         //           'validators' => array('alnum'),
-        //           'label' => 'Results Per Page:',
+        //           'label' => __(''Results Per Page:'),
         //           'value' => get_option('solr_search_rows')
         //       ));
         
         $rows = new Zend_Form_Element_Text('solr_search_rows');
-        $rows->setLabel('Results Per Page')->setRequired(true);
+        $rows->setLabel(__('Results Per Page'))->setRequired(true);
         $rows->setValue(get_option('solr_search_rows'));
         $rows->setValidators(array('alnum'));
-        $rows->addErrorMessage('Results count must be numeric');
+        $rows->addErrorMessage(__('Results count must be numeric'));
         echo $rows;
         
         
         $sort = new Zend_Form_Element_Select('solr_search_facet_sort');
-        $sort->setLabel('Default Sort Order:')->setRequired(true);
-        $sort->addMultiOption('index', 'Alphabetical');
-    	$sort->addMultiOption('count', 'Occurrences');    
+        $sort->setLabel(__('Default Sort Order:'))->setRequired(true);
+        $sort->addMultiOption('index', __('Alphabetical'));
+    	$sort->addMultiOption('count', __('Occurrences'));    
         $sort->setValue(get_option('solr_search_facet_sort'));
         echo $sort;
         
         echo new Zend_Form_Element_Text('solr_search_facet_limit', array(
             'required' => true,
             'validators' => array('alnum'),
-            'label' => 'Maximum Facet Count:',
+            'label' => __('Maximum Facet Count:'),
             'value' => get_option('solr_search_facet_limit')
         ));
         

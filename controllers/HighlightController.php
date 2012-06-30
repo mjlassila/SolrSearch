@@ -18,10 +18,10 @@ class SolrSearch_HighlightController extends Omeka_Controller_Action
 				set_option('solr_search_hl', $uploadedData['solr_search_hl']);
 				set_option('solr_search_snippets', $uploadedData['solr_search_snippets']);
 				set_option('solr_search_fragsize', $uploadedData['solr_search_fragsize']);
-				$this->flashSuccess('Hit highlighting features modified.');
+				$this->flashSuccess(__('Hit highlighting features modified.'));
     		}
 	    	else {
-	    			$this->flashError('Failed to gather posted data.');
+	    			$this->flashError(__('Failed to gather posted data.'));
 	    			$this->view->form = $form;
 	    	}
     	}	
@@ -37,14 +37,14 @@ class SolrSearch_HighlightController extends Omeka_Controller_Action
 	    //set true or false
 		$hl = new Zend_Form_Element_Select ('solr_search_hl');
     	$hl->setLabel('Highlighting:');
-		$hl->addMultiOption('true', 'True');
-		$hl->addMultiOption('false', 'False'); 
+		$hl->addMultiOption('true', __('True'));
+		$hl->addMultiOption('false', __('False')); 
 	    $hl->setValue(get_option('solr_search_hl'));
 	    $form->addElement($hl);
 	    
 	    //number of snippets
 		$snippets = new Zend_Form_Element_Text ('solr_search_snippets');
-	    $snippets->setLabel('Snippets:');
+	    $snippets->setLabel(__('Snippets:'));
 	    $snippets->setValue(get_option('solr_search_snippets'));
 	    $snippets->setRequired('true');    
 		$snippets->addValidator(new Zend_Validate_Int());
@@ -52,7 +52,7 @@ class SolrSearch_HighlightController extends Omeka_Controller_Action
 
 		//fragment size
 	    $fragsize = new Zend_Form_Element_Text ('solr_search_fragsize');
-	    $fragsize->setLabel('Fragment Size:');
+	    $fragsize->setLabel(__('Fragment Size:'));
 	    $fragsize->setValue(get_option('solr_search_fragsize'));
 	    $fragsize->setRequired('true');    
 	    $fragsize->addValidator(new Zend_Validate_Int());
@@ -61,7 +61,7 @@ class SolrSearch_HighlightController extends Omeka_Controller_Action
 	    //Submit button
     	$form->addElement('submit','submit');
     	$submitElement=$form->getElement('submit');
-    	$submitElement->setLabel('Submit');
+    	$submitElement->setLabel(__('Submit'));
 	    return $form;
 	}
 }
